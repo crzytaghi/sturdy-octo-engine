@@ -4,7 +4,11 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <h1>INDEX PAGE</h1>
+    <div class="header">
+      <h1>INDEX PAGE</h1>
+      <a href="/users/new">Sign Up</a>
+      <a href="/sessions/new">Log In</a><br/>
+    </div>
     <% for (let recipe of recipes) { %>
       <a href="/recipe/<%=recipe.id%>">
         <%=recipe.title%>
