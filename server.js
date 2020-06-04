@@ -2,6 +2,9 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const session = require('express-session');
+
+// ===== CONFIGURATION =====
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
@@ -38,6 +41,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 const recipeController = require('./controllers/recipe_controller.js');
 app.use('/recipe', recipeController);
+
+const userController = require('./controllers/users_controller.js');
+app.use('/users', userController);
+
+const sessionsController = require('./controllers/sessions_controller.js');
+app.use('/sessions', sessionsController);
 
 
 // ===== Routes ===== //

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <%- include ('../partials/head.ejs') %>
   </head>
   <body>
     <div class="header">
       <h1>Recipe Page</h1>
-        <button type="button" name="button">
-          <a href="/recipe/<%=recipe.id%>/edit">Edit</a>
-        </button>
-        <form class="" action="/recipe/<%=recipe.id%>?_method=DELETE" method="post">
-          <input type="submit" name="delete" value="Delete">
-        </form>
+      <a href="/recipe">Back To Home Page</a>
+      <button type="button" name="button">
+        <a href="/recipe/<%=recipe.id%>/edit">Edit</a>
+      </button>
+      <form class="" action="/recipe/<%=recipe.id%>?_method=DELETE" method="post">
+        <input type="submit" name="delete" value="Delete">
+      </form>
     </div>
     <div class="body">
-      <h2><%=recipe.title%></h2>
+      <h2>Recipe: <%=recipe.title%></h2>
+      <h2>Type: <%=recipe.type%></h2>
       <h2>Cook Time: <%=recipe.time%>min</h2>
       <img src="<%=recipe.img%>" alt="<%=recipe.title%>">
     </div>

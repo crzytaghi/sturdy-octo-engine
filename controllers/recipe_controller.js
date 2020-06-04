@@ -2,6 +2,12 @@ const express = require('express');
 const Recipe = require('../models/recipe.js');
 const recipes = express.Router();
 
+const isAuthenticated = (req,res,next) => {
+  res.render(
+    'recipe/new.ejs'
+  )
+}
+
 // INDEX
 recipes.get('/', (req,res) => {
   Recipe.find({}, (err, allRecipes) => {
