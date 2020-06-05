@@ -1,0 +1,13 @@
+<% if (currentUser) { %>
+    <h2>Welcome <%= currentUser.username %>!</h2>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </form>
+    <form action="/sessions?_method=DELETE" method="POST">
+      <input type="submit" value="Log Out" class="btn btn-outline-warning">
+    </form>
+  <% } else { %>
+    <a href="/users/new">Sign Up</a>
+    <a href="/sessions/new">Log In</a>
+  <% } %>

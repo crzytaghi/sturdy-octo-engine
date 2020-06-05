@@ -8,13 +8,23 @@
     <a href="/recipe">Back To Home Page</a>
     <a href="/recipe/<%=recipe.id%>">Back To <%=recipe.title%></a>
     <form action="/recipe/<%=recipe.id%>?_method=PUT" method="POST">
-      Title: <input type="text" name="title" value="<%=recipe.title%>"><br/>
-      Ingredients: <textarea name="ingredient" rows="8" cols="80"><%=recipe.ingredient%></textarea><br/>
-      Process: <textarea name="process" rows="8" cols="80"><%=recipe.process%></textarea><br/>
-      Image: <input type="text" name="img" class="new-img" value="<%=recipe.img%>"><br/>
-      Cook Time (min): <input type="number" name="time" value="<%=recipe.time%>"><br/>
-      Type: <input type="text" name="type" value="<%=recipe.type%>">
-      <input type="submit" value="Edit Recipe">
+      <div class="container">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" name="title" value="<%=recipe.title%>" class="form-control">
+          <label>Ingredients</label>
+          <textarea name="ingredient" rows="8" cols="80" class="form-control"><%=recipe.ingredient%></textarea>
+          <label>Directions</label>
+          <textarea name="process" rows="8" cols="80" class="form-control"><%=recipe.process%></textarea>
+          <label>Image</label>
+          <input type="text" name="img" value="<%=recipe.img%>" class="form-control">
+          <label>Cook Time (min)</label>
+          <input type="number" name="time" value="<%=recipe.time%>" class="form-control">
+          <label>Type</label>
+          <input type="text" name="type" value="<%=recipe.type%>" class="form-control">
+          <input type="submit" value="Edit Recipe" class="btn btn-outline-primary m-2">
+        </div>
+      </div>
     </form>
   </body>
 </html>

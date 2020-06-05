@@ -20,7 +20,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, autoIndex: false }
 );
 
 // ===== Error / success ===== //
@@ -38,6 +38,11 @@ app.use(express.urlencoded({ extended: true }));// extended: false - does not al
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(session({
+  secret:process.env.SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
 
 const recipeController = require('./controllers/recipe_controller.js');
 app.use('/recipe', recipeController);

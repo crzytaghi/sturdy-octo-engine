@@ -4,17 +4,25 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <div class="header">
-      <h1>INDEX PAGE</h1>
-      <a href="/users/new">Sign Up</a>
-      <a href="/sessions/new">Log In</a><br/>
+    <nav class="navbar navbar-light bg-light m-4">
+      <h1>Global</h1>
+      <%- include('../partials/nav.ejs') %>
+    </nav>
+    <div class="card-columns">
+      <% for (let recipe of recipes) { %>
+        <div class="card p-1">
+          <img class="card-img-top" src="<%=recipe.img%>" alt="<%=recipe.title%>">
+          <div class="card-body">
+            <h5 class="card-title"><%=recipe.title%></h5>
+            <a href="/recipe/<%=recipe.id%>" class="btn btn-outline-secondary">Explore</a>
+          </div>
+
+        </div>
+
+      <% } %>
     </div>
-    <% for (let recipe of recipes) { %>
-      <a href="/recipe/<%=recipe.id%>">
-        <%=recipe.title%>
-      </a>
-    <% } %>
-    <nav>
+
+    <nav class="navbar navbar-light bg-light m-4">
       <a href="/recipe/new">Create New Recipe</a>
     </nav>
   </body>

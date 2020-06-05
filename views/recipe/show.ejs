@@ -4,21 +4,22 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <div class="header">
-      <h1>Recipe Page</h1>
+    <nav class="navbar navbar-light bg-dark">
+      <h3 style="color: ghostwhite;"><%=recipe.title%></h3>
       <a href="/recipe">Back To Home Page</a>
-      <button type="button" name="button">
+      <button type="button" name="button" class="btn btn-outline-secondary">
         <a href="/recipe/<%=recipe.id%>/edit">Edit</a>
       </button>
       <form class="" action="/recipe/<%=recipe.id%>?_method=DELETE" method="post">
-        <input type="submit" name="delete" value="Delete">
+        <input type="submit" name="delete" value="Delete" class="btn btn-danger">
       </form>
-    </div>
-    <div class="body">
-      <h2>Recipe: <%=recipe.title%></h2>
-      <h2>Type: <%=recipe.type%></h2>
-      <h2>Cook Time: <%=recipe.time%>min</h2>
-      <img src="<%=recipe.img%>" alt="<%=recipe.title%>">
+    </nav>
+    <div class="container-fluid">
+      <h5>Type: <%=recipe.type%></h5>
+      <h5>Cook Time: <%=recipe.time%>min</h5>
+      <div class="jumbotron">
+        <img src="<%=recipe.img%>" alt="<%=recipe.title%>">
+      </div>
     </div>
   </body>
 </html>
