@@ -5,7 +5,7 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <div class="container p-4">
+    <div class="container bg-dark">
       <div class="row">
         <div class="col-sm-8">
           <h1>Add New Recipe</h1>
@@ -13,10 +13,10 @@
         <div class="col-sm-4">
           <a class="btn btn-primary" role="button" href="/recipe">Back To Home Page</a>
         </div>
+      </div>
     </div>
-    </div>
-    <form action="/recipe" method="POST">
-      <div class="container">
+    <div class="container">
+      <form action="/recipe" method="POST">
         <div class="form-group">
           <label>Title</label>
           <input type="text" name="title" placeholder="Recipe Title" class="form-control">

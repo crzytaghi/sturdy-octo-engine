@@ -5,7 +5,7 @@
   </head>
   <body>
     <nav class="navbar navbar-light bg-dark">
-      <h3 style="color: ghostwhite;"><%=recipe.title%></h3>
+      <h5 style="color: ghostwhite"> Instructions </h5>
       <a href="/recipe">Back To Home Page</a>
       <button type="button" name="button" class="btn btn-outline-secondary">
         <a href="/recipe/<%=recipe.id%>/edit">Edit</a>
@@ -14,12 +14,12 @@
         <input type="submit" name="delete" value="Delete" class="btn btn-danger">
       </form>
     </nav>
-    <div class="container-fluid">
+    <div class="container mt-3">
       <h5>Type: <%=recipe.type%></h5>
       <h5>Cook Time: <%=recipe.time%>min</h5>
-      <div class="jumbotron">
-        <img src="<%=recipe.img%>" alt="<%=recipe.title%>">
-      </div>
+      <img src="<%=recipe.img%>" alt="<%=recipe.title%>">
+      <p><%=recipe.ingredient%></p>
+      <p><%=recipe.process%></p>
     </div>
   </body>
 </html>

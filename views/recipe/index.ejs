@@ -4,26 +4,35 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light m-4">
-      <h1>Global</h1>
+    <nav class="navbar navbar-light bg-dark ">
+      <h1 style="color:ghostwhite;">Global</h1>
       <%- include('../partials/nav.ejs') %>
     </nav>
-    <div class="card-columns">
-      <% for (let recipe of recipes) { %>
-        <div class="card p-1">
-          <img class="card-img-top" src="<%=recipe.img%>" alt="<%=recipe.title%>">
-          <div class="card-body">
-            <h5 class="card-title"><%=recipe.title%></h5>
-            <a href="/recipe/<%=recipe.id%>" class="btn btn-outline-secondary">Explore</a>
+    <div class="fluid-container mt-5 mx-auto" style="width:90%">
+      <div class="d-flex flex-row-reverse">
+        <div class="p-2">
+          <a href="/recipe/new" class="btn btn-outline-secondary">Create New Recipe</a>
+        </div>
+      </div>
+      <div class="card-columns">
+        <% for (let recipe of recipes) { %>
+          <div class="card p-1">
+            <img class="card-img-top" src="<%=recipe.img%>" alt="<%=recipe.title%>">
+            <div class="card-body">
+              <h5 class="card-title"><%=recipe.title%></h5>
+              <a href="/recipe/<%=recipe.id%>" class="btn btn-outline-secondary">Explore</a>
+            </div>
+
           </div>
 
-        </div>
-
-      <% } %>
+        <% } %>
+      </div>
     </div>
 
-    <nav class="navbar navbar-light bg-light m-4">
-      <a href="/recipe/new">Create New Recipe</a>
+
+    <nav class="navbar navbar-light bg-dark" style="color:ghostwhite">
+      <p  class="font-italic">Andrew Taghi Designs</p>
+      <p>Houston, TX</p>
     </nav>
   </body>
 </html>
