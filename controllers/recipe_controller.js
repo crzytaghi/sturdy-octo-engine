@@ -31,6 +31,8 @@ recipes.get('/new', isAuthenticated, (req,res) => {
 // SHOW
 recipes.get('/:id', isAuthenticated, (req,res) => {
   Recipe.findById(req.params.id, (err, foundRecipe) => {
+    // console.log(req.params.id);
+    // console.log(foundRecipe._id);
     res.render('recipe/show.ejs',
       {
         recipe: foundRecipe,

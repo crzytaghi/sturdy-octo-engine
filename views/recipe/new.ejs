@@ -5,17 +5,11 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <div class="container bg-dark">
-      <div class="row">
-        <div class="col-sm-8">
-          <h1>Add New Recipe</h1>
-        </div>
-        <div class="col-sm-4">
-          <a class="btn btn-primary" role="button" href="/recipe">Back To Home Page</a>
-        </div>
-      </div>
-    </div>
-    <div class="container">
+    <nav class="navbar bg-dark" style="color:ghostwhite">
+      <h1>Add New Recipe</h1>
+      <a class="btn btn-primary" role="button" href="/recipe">Back To Home Page</a>
+    </nav>
+    <div class="container mt-3">
       <form action="/recipe" method="POST">
         <div class="form-group">
           <label>Title</label>
@@ -25,14 +19,15 @@
           <label>Process</label>
           <textarea name="process" rows="8" cols="80" class="form-control"></textarea>
           <label>Image</label>
-          <input type="text" name="img" class="form-control" placeholder="Image if available">
+          <input type="text" name="img" class="form-control" placeholder="Link to Image if available">
           <label>Cook Time (min)</label>
           <input type="number" name="time" placeholder="Time in minutes" class="form-control">
           <label>Type</label>
-          <input type="text" name="type" placeholder="Mexican/Persian/Thai" class="form-control">
+          <input type="text" name="type" placeholder="Mexican/Persian/Thai/..." class="form-control">
           <input type="submit" value="Create Recipe" class="btn btn-outline-primary m-2">
         </div>
       </div>
     </form>
+    <%- include ('../partials/footer.ejs') %>
   </body>
 </html>

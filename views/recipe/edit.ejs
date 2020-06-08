@@ -4,7 +4,7 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar bg-dark">
       <h1 style="color: ghostwhite;">Edit Recipe</h1>
       <a type="submit" class="btn btn-outline-primary" href="/recipe">Home</a>
       <a type="submit" class="btn btn-outline-primary" href="/recipe/<%=recipe.id%>">Back To Recipe</a>
@@ -28,5 +28,6 @@
         </div>
       </div>
     </form>
+    <%- include ('../partials/footer.ejs') %>
   </body>
 </html>
