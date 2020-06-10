@@ -4,7 +4,7 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-dark">
+    <nav class="navbar bg-dark">
       <h5 style="color: ghostwhite"> Instructions </h5>
       <a href="/recipe">Back To Home Page</a>
       <button type="button" name="button" class="btn btn-outline-secondary">
@@ -17,7 +17,7 @@
     <div class="container mt-3">
       <h5>Type: <%=recipe.type%></h5>
       <h5>Cook Time: <%=recipe.time%>min</h5>
-      <img src="<%=recipe.img%>" alt="<%=recipe.title%>" class="rounded mx-auto d-block">
+      <img src="<%=recipe.img%>" alt="<%=recipe.title%>" class="rounded mx-auto d-block img-thumbnail">
       <!-- <p><%=recipe.ingredient%></p>
       <p><%=recipe.process%></p> -->
       <div class="accordion mt-3" id="accordionExample">
