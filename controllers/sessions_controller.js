@@ -11,6 +11,7 @@ sessions.get('/new', (req,res) => {
   )
 });
 
+// Logs the user in based on the login information provided using a post request to the database. Ensures the user stays logged in if they navigate away from the website.
 sessions.post('/', (req,res) => {
   User.findOne({username: req.body.username}, (err, foundUser) => {
     if (err) {
@@ -29,6 +30,7 @@ sessions.post('/', (req,res) => {
   })
 })
 
+// Deletes the users session or logs the user out using a delete request to the session.
 sessions.delete('/', (req,res) => {
   req.session.destroy(() => {
     res.redirect('/')
